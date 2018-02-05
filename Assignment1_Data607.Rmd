@@ -1,0 +1,75 @@
+---
+title: "Assignment1"
+author: "Violeta Stoyanova"
+date: "2/4/2018"
+output: html_document
+---
+
+
+
+
+
+```{r}
+#1. Take the Data and create a dataframe with a subset of the columns in the dataset. 
+MushData<-read.table("https://archive.ics.uci.edu/ml/machine-learning-databases/mushroom/agaricus-lepiota.data",sep=",")
+head(MushData)
+summary(MushData)
+```
+
+```{r}
+datasub<-subset(MushData,select = c(V1,V2,V4,V19,V23))
+head(datasub)
+```
+```{r}
+colnames(datasub) <- c("V1"="Class","V2"="Cap-Shape","V4"="Gill-Color","V19"="Ring-Number","V23"="Habitat")
+head(datasub)
+```
+```{r}
+levels(datasub$Class) <- c(levels(datasub$Class), "edible", "poisonous")
+datasub$Class[datasub$Class == 'e'] <- 'edible'
+datasub$Class[datasub$Class == 'p'] <- 'poisonous'
+
+levels(datasub$`Cap-Shape`) <- c(levels(datasub$`Cap-Shape`), "bell", "conical", "convex", "flat", "knobbed", "sunken")
+datasub$`Cap-Shape`[datasub$`Cap-Shape` == 'b'] <- 'bell'
+datasub$`Cap-Shape`[datasub$`Cap-Shape` == 'c'] <- 'conical'
+datasub$`Cap-Shape`[datasub$`Cap-Shape` == 'x'] <- 'convex'
+datasub$`Cap-Shape`[datasub$`Cap-Shape` == 'f'] <- 'flat'
+datasub$`Cap-Shape`[datasub$`Cap-Shape` == 'k'] <- 'knobbed'
+datasub$`Cap-Shape`[datasub$`Cap-Shape` == 's'] <- 'sunken'
+
+levels(datasub$'Gill-Color') <- c(levels(datasub$'Gill-Color'), "black", "brown", "buff", "chocolate", "gray", "green", "orange", "pink", "purple","red","white","yellow")
+
+
+datasub$'Gill-Color'[datasub$'Gill-Color' == 'k'] <- 'black'
+datasub$'Gill-Color'[datasub$'Gill-Color' == 'n'] <- 'brown'
+datasub$'Gill-Color'[datasub$'Gill-Color' == 'b'] <- 'buff'
+datasub$'Gill-Color'[datasub$'Gill-Color' == 'h'] <- 'chocolate'
+datasub$'Gill-Color'[datasub$'Gill-Color' == 'g'] <- 'gray'
+datasub$'Gill-Color'[datasub$'Gill-Color' == 'r'] <- 'green'
+datasub$'Gill-Color'[datasub$'Gill-Color' == 'o'] <- 'orange'
+datasub$'Gill-Color'[datasub$'Gill-Color' == 'p'] <- 'pink'
+datasub$'Gill-Color'[datasub$'Gill-Color' == 'u'] <- 'purple'
+datasub$'Gill-Color'[datasub$'Gill-Color' == 'e'] <- 'red'
+datasub$'Gill-Color'[datasub$'Gill-Color' == 'w'] <- 'white'
+datasub$'Gill-Color'[datasub$'Gill-Color' == 'y'] <- 'yellow'
+
+levels(datasub$'Ring-Number') <- c(levels(datasub$'Ring-Number'), "none", "one", "two")
+datasub$'Ring-Number'[datasub$'Ring-Number' == 'n'] <- 'none'
+datasub$'Ring-Number'[datasub$'Ring-Number' == 'o'] <- 'one'
+datasub$'Ring-Number'[datasub$'Ring-Number' == 't'] <- 'two'
+
+levels(datasub$Habitat) <- c(levels(datasub$Habitat), "grasses", "leaves", "meadows", "paths", "urban", "waste", "woods")
+datasub$Habitat[datasub$Habitat == 'g'] <- 'grasses'
+datasub$Habitat[datasub$Habitat == 'l'] <- 'leaves'
+datasub$Habitat[datasub$Habitat == 'm'] <- 'meadows'
+datasub$Habitat[datasub$Habitat == 'p'] <- 'paths'
+datasub$Habitat[datasub$Habitat == 'u'] <- 'urban'
+datasub$Habitat[datasub$Habitat == 'w'] <- 'waste'
+datasub$Habitat[datasub$Habitat == 'd'] <- 'woods'
+
+#The transformed dataset
+head(datasub)
+
+```
+
+
