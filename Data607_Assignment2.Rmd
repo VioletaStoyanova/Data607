@@ -1,0 +1,57 @@
+---
+title: "Data607_Assignment2"
+author: "Violeta Stoyanova"
+date: "2/11/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+#Fisrtly, I exported the sql file to a csv file onto my machine then I read the file onto RMarkdown. I was curious about certain variables so I did some data exploration. 
+Viewers_Rating<-read.csv("~/Desktop/Viewers_Ratings.csv")
+summary(Viewers_Rating)
+mean(Viewers_Rating$Age)
+
+```
+```{r}
+#Next, I created a data frame. 
+Viewers_Rating_df<-data.frame(Viewers_Rating,stringsAsFactors=FALSE)
+Viewers_Rating_df[]<-lapply(Viewers_Rating_df,as.array)
+
+print(Viewers_Rating_df)
+```
+```{r}
+#Next step is Data Visualization. I was particularly interested in how popular was each movie compared to the age of the viewers although the sample is pretty small to have any significant difference. Next possible steps are to add more data such as genre, release date, etc and see if there is any correlation between age and those variables.
+library(ggplot2)
+p <-ggplot(Viewers_Rating_df,aes(Age,Wonder_Woman))
+p +geom_bar(stat = "identity", aes(fill=Age)) 
+```
+```{r}
+library(ggplot2)
+p <-ggplot(Viewers_Rating_df,aes(Age,IT))
+p +geom_bar(stat = "identity", aes(fill=Age)) 
+```
+```{r}
+library(ggplot2)
+p <-ggplot(Viewers_Rating_df,aes(Age,Get_Out))
+p +geom_bar(stat = "identity", aes(fill=Age)) 
+```
+```{r}
+library(ggplot2)
+p <-ggplot(Viewers_Rating_df,aes(Age,Lady_Bird))
+p +geom_bar(stat = "identity", aes(fill=Age)) 
+```
+```{r}
+library(ggplot2)
+p <-ggplot(Viewers_Rating_df,aes(Age,The_Post))
+p +geom_bar(stat = "identity", aes(fill=Age)) 
+```
+```{r}
+library(ggplot2)
+p <-ggplot(Viewers_Rating_df,aes(Age,The_Shape_of_Water))
+p +geom_bar(stat = "identity", aes(fill=Age)) 
+```
+
