@@ -21,8 +21,7 @@ name_rear
 ```
 ```{r}
 #Removing the titles and middle names
-f_l_name<- str_replaDataBase_Ratings<-dbConnect(MySQL(), user='root', dbname='Database_Movies', host='localhost', password=sqlPassword)
-ce_all(name_rear,"[\\w]+\\. ", "")
+f_l_name<-str_replace_all(name_rear,"[\\w]+\\. ", "")
 f_l_name
 ```
 ```{r}
