@@ -1,0 +1,59 @@
+---
+title: "Data607_Assignment9"
+author: "Violeta Stoyanova"
+date: "3/30/2018"
+output: html_document
+theme: slate
+highlight: tango
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+#Assignment – Web APIs
+
+##The New York Times web site provides a rich set of APIs, as described here: http://developer.nytimes.com/docs You’ll need to start by signing up for an API key.
+##Your task is to choose one of the New York Times APIs, construct an interface in R to read in the JSON data, and transform it to an R dataframe.
+*I chose to get a key for the Movie Ratings API.
+
+##Load all the needed libararies
+```{r}
+gc()
+rm(list=ls())
+library(jsonlite)
+library(tidyr)
+library(dplyr)
+library(knitr)
+api_key<-"e574a2335cc54ceeaf5a074a336e76bc"
+url <- "http://api.nytimes.com/svc/movies/v2/reviews/search.json?api_key="
+api_url= paste(url,api_key,sep="")
+api_url
+```
+ 
+```{r}
+#Read JSON using API key
+movies<- fromJSON(api_url, flatten = TRUE)
+
+#Convert JSON into data.frame
+movies<- data.frame(movies)
+#review the column names 
+colnames(movies)
+
+
+```
+```{r}
+#Choose only the relevant columns 
+movies_updated<- movies[c(4,5,6,7,8,9,10,11,12,17)]
+head(movies_updated)
+```
+```{r}
+#Renamed the columns 
+colnames(movies_updated) <- c("Number_Results", "Title", "Mpaa_Rating", "Critics_Pick", "Byline", "Headline","Short_Summary","Publication_Date","Opening_Date","MM_Type")
+head(movies_updated)
+```
+```{r}
+kable(movies_updated)
+```
+
