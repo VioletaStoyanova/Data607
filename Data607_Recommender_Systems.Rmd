@@ -1,0 +1,52 @@
+---
+title: "Data607_Recommender_Systems"
+author: "Violeta Stoyanova"
+date: "4/18/2018"
+output: html_document
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+##Your task is to analyze an existing recommender system that you find interesting. 
+You should: 
+
+1. Perform a Scenario Design analysis as described below. Consider whether it makes sense for your selected recommender system to perform scenario design twice, once for the organization (e.g. Amazon.com) and once for the organization's customers.
+
+2. Attempt to reverse engineer what you can about the site, from the site interface and any available information that you can find on the Internet or elsewhere.
+
+3. Include specific recommendations about how to improve the site's recommendation capabilities going forward. 
+
+4. Create your report using an R Markdown file, and create a discussion thread with a link to the GitHub repo where your Markdown file notebook resides. You are not expected to need to write code for this discussion assignment.
+
+Recommender System for the car service UBER
+
+ ! [Alt text](/Users/Violet/Downloads/uber.jpg)
+ 1. I think in the case of Uber I would propose a scenario design for both internal and external purposes. Since the car service company heavily relies on drivers recruitment which also depends on customer experience (CX) that would make perfect sense. 
+ #Who are your target users?
+ Uber aims to recruit as many people as possible all over the world. To be precise Uber is available in 54 countries around the world with over 1.5 million drivers behind the wheel. Only in the U.S. there were over 160 thousand drivers by the end of 2014. (http://www.businessofapps.com/data/uber-statistics/#3)
+ Therefore they have one of the largest target groups in the world. 
+ 
+ When it comes to the people that ride with Uber anyone who can download the app and needs to get places is their target. 
+ 
+ #What are their key goals? 
+ Uber is dedicated to providing taxi service availabe at your fingertips. They pride themselves in affordable, fast and innovative service including features such as map overview, driver ratings, mobile payment and pickup.In addition,now Uber provides services such as self-driving technologies, UberEats and UberFresh. 
+ Uber's growth depends on both the drivers and the people who ride with Uber. Hence, they need to satisfy the needs of their drivers and make sure that they make enough money and also comply with the demands of its riders. 
+ 
+ #How can I help them accomplish their goals? 
+ Send new users or returning users discounts and then having users rate their experience.  
+ Having drivers track their earnings and see how likely are they to recommend to others who want to make extra money. 
+
+2."Reverse Engeneering"
+Uber Engeneering posted today 04/18/2018 the following article
+ "Mediation Modeling at Uber: Understanding Why Product Changes Work (and Don’t Work)"
+By Bonnie Li and Totte Harinen
+https://eng.uber.com/mediation-modeling/
+
+https://nycdatascience.com/blog/student-works/finding-fare-uber-recommendation-system/
+This Madiation Modeling is intended to predict why is certain outcome happening. For example, Uber started giving discounts to a lot of new users and returning customers and with this modeling they are able to answer why riders continue to ride Uber, whether it was because of the discount or if it was due to the experience they had. 
+When it comes to the drivers they also Uber engeneering team also used Medaiting Modeling. 
+"We wanted to know if earnings understanding was a significant behavioral mechanism behind earnings-related support tickets. In other words, we wanted to understand whether it was the case that the treatment improved earnings understanding, which in turn reduced support tickets. If that is the case, we would also like to estimate how much of the treatment effect was mediated through the path of earnings understanding (as opposed to other mechanisms)." 
+3. As an often Uber rider I belive the company needs to focus a bit more on the drivers and make sure they are able to increase their income. Drivers are more likely to recommend to others to become a driver if they are satisfied but also if there was an incentive for them. 
